@@ -1,0 +1,51 @@
+generated: '2026-09-12'
+method: probed
+source: https://www.agragene.com/_api/mcp
+description: >-
+  Cross-cutting standards conformance for Agragene. The company publishes no OpenAPI,
+  so almost every contract-level standard is simply absent. Two agent-facing conventions
+  ARE genuinely served and were confirmed by direct probe.
+conformance:
+- id: mcp
+  name: Model Context Protocol
+  version: '2025-06-18'
+  conforms: true
+  evidence: >-
+    POST https://www.agragene.com/_api/mcp {"method":"initialize"} returned HTTP 200 with
+    result.protocolVersion "2025-06-18" and serverInfo.name 'Site Visitor Assistant for
+    site "Agragene"'; tools/list returned 9 tools with JSON Schema inputSchemas.
+  note: Implemented by the Wix platform, enabled on Agragene's own host.
+- id: llms-txt
+  name: llms.txt convention
+  conforms: true
+  evidence: >-
+    GET https://www.agragene.com/llms.txt returned HTTP 200, 3266 bytes, valid llms.txt
+    shape (H1 title, blockquote summary, H2 link sections).
+- id: json-schema
+  name: JSON Schema (via MCP tool inputSchema)
+  conforms: true
+  evidence: >-
+    Each of the 9 tools in mcp/agragene-mcp-tools.json carries an inputSchema object with
+    type/properties/required, captured verbatim from the live tools/list response.
+- id: rfc9116
+  name: security.txt
+  conforms: false
+  evidence: GET https://www.agragene.com/.well-known/security.txt returned HTTP 400 (Wix error shell).
+- id: oauth2
+  name: OAuth 2.0
+  conforms: false
+  evidence: No OAuth surface; MCP endpoint is anonymous and serves no authorization-server metadata (HTTP 400).
+- id: rfc9457
+  name: Problem Details for HTTP APIs
+  conforms: false
+  evidence: No HTTP API contract published; errors are JSON-RPC 2.0 error objects from the MCP transport.
+domain_standard:
+  assessed: true
+  found: false
+  note: >-
+    Agragene's market is agricultural biotechnology / biological pest control. Its
+    regulatory interfaces are USDA APHIS and EPA submissions, not a machine-readable
+    domain API standard, and the company ships no contract in which such a standard
+    could be declared. REWARD-ONLY check: recorded as not applicable rather than absent,
+    and nothing was invented to fill the slot.
+checked: '2026-09-12'

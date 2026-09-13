@@ -1,0 +1,66 @@
+generated: '2026-09-12'
+method: probed
+source: probed directly against every host this record knows
+description: >-
+  Well-known discovery probe of both Agragene hosts. EVERY path missed. The apex
+  (agragene.com) 301-redirects to www; the www host is Wix-served and answers HTTP 400
+  with an HTML error shell for every /.well-known/* path, which is a miss, not a document.
+  No pointer of type WellKnown, APICatalog or SecurityTxt is emitted for this record,
+  because the provider serves none of these documents. The site's MCP endpoint
+  (https://www.agragene.com/_api/mcp) is unauthenticated and therefore publishes no
+  OAuth protected-resource or authorization-server metadata either.
+hosts:
+- host: agragene.com
+  note: apex; 301-redirects to www.agragene.com for every path probed
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 301
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+    file: null
+  - path: /.well-known/api-catalog
+    status: 301
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 301
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 301
+    file: null
+  - path: /.well-known/agent.json
+    status: 301
+    file: null
+- host: www.agragene.com
+  note: >-
+    canonical host; also the MCP endpoint host (/_api/mcp). Wix returns HTTP 400 with an
+    HTML error page for unknown /.well-known/* paths — an error shell, not a document.
+  documents:
+  - path: /.well-known/security.txt
+    status: 400
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 400
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 400
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 400
+    file: null
+  - path: /.well-known/api-catalog
+    status: 400
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 400
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 400
+    file: null
+  - path: /.well-known/agent.json
+    status: 400
+    file: null
+checked: '2026-09-12'

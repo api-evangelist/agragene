@@ -1,0 +1,27 @@
+generated: '2026-09-12'
+method: searched
+source: https://www.agragene.com/
+description: >-
+  Agragene publishes no pricing of any kind. It is a pre-commercial agricultural
+  biotechnology company: its first product, KNOCKOUT-SWD (precision-guided sterile
+  Spotted Wing Drosophila), is stated for a limited launch in 2027, and the company's
+  own llms.txt describes it as "slated for a limited launch in 2027". There is no
+  developer program, no API product, and therefore no API plans or tiers. The commercial
+  motion is a grower sales/waitlist relationship (the "First Flight Club" page), not
+  self-serve subscription.
+plan_count: 0
+plans: []
+pricing_model: none-published
+commercial_stage: pre-commercial; first product limited launch stated for 2027
+evidence:
+- url: https://www.agragene.com/pricing
+  status: 404
+- url: https://www.agragene.com/plans
+  status: 404
+- url: https://www.agragene.com/ffc
+  status: 200
+  note: "First Flight Club — early-access grower program page; carries no published price."
+- url: https://www.agragene.com/llms.txt
+  status: 200
+  note: Company-authored summary states the KNOCKOUT SWD limited launch is slated for 2027.
+checked: '2026-09-12'

@@ -64,5 +64,15 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Agragene is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+Agragene is an agricultural biotechnology company using CRISPR-based genome engineering to build
+Precision-Guided Sterile Insect Technology (pgSIT) — breeding insect lines that produce only sterile
+males, which are released to mate with wild female crop pests and produce no viable offspring. Founded
+in San Diego in 2017 and headquartered in St. Louis, Missouri. Its first product, KNOCKOUT-SWD, targets
+Spotted Wing Drosophila, with a limited launch stated for 2027.
+
+Agragene has no developer program and publishes no API product. Its only machine-readable surfaces are a
+company-authored `llms.txt` and an anonymous Wix site MCP endpoint served on its own host.
+
+- https://www.agragene.com/
+- https://www.agragene.com/llms.txt
+- https://www.agragene.com/_api/mcp

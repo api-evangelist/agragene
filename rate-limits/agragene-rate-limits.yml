@@ -1,0 +1,25 @@
+generated: '2026-09-12'
+method: probed
+source: https://www.agragene.com/_api/mcp
+description: >-
+  Agragene documents no rate limits. The only callable surface is the anonymous Wix site
+  MCP endpoint; its live responses carried no rate-limit headers on the probes run
+  2026-09-12 (initialize, tools/list, and one tools/call all returned HTTP 200 with no
+  RateLimit-*, X-RateLimit-* or Retry-After header). Any limit that exists is a Wix
+  platform limit, undocumented on Agragene's host. This is an honest zero, not an
+  unchecked field.
+limit_count: 0
+limits: []
+response_headers: []
+exhaustion_status_code: null
+evidence:
+- url: https://www.agragene.com/_api/mcp
+  status: 200
+  note: POST tools/list, unauthenticated; no rate-limit headers present in the response.
+- url: https://www.agragene.com/_api/mcp
+  status: 200
+  note: POST tools/call SearchSiteApiDocs, unauthenticated; no rate-limit headers present.
+- url: https://www.agragene.com/developers
+  status: 404
+  note: No developer portal exists on which limits could be documented.
+checked: '2026-09-12'

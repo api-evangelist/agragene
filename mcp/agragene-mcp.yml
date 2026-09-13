@@ -1,0 +1,107 @@
+generated: '2026-09-12'
+method: probed
+status: published
+source: https://www.agragene.com/_api/mcp
+description: >-
+  Agragene serves a live, unauthenticated remote MCP endpoint at
+  https://www.agragene.com/_api/mcp, advertised in the company's own /llms.txt under an
+  "AI Agent Access" section. An anonymous JSON-RPC initialize returned serverInfo.name
+  'Site Visitor Assistant for site "Agragene"' and tools/list returned 9 tools with full
+  inputSchemas. This is the ONLY machine-readable API surface Agragene publishes — the
+  company is a pre-commercial agricultural-biotechnology firm with no developer program,
+  no OpenAPI, and no public product API.
+authorship: platform
+authorship_note: >-
+  This is the stock Wix Site MCP server, not a server Agragene wrote. The tool set
+  (GetBusinessDetails, SearchInSite, SearchSiteApiDocs, GenerateVisitorToken,
+  CallWixSiteAPI, ExecuteWixAPI, ReadFullDocsArticle, ReadFullDocsMethodSchema,
+  BrowseWixRESTDocsMenu) is byte-identical across Wix tenants and is documented at
+  https://dev.wix.com/docs/develop-websites/articles/get-started/about-the-wix-site-mcp.
+  Agragene's contribution is enabling it on its own host; the surface is real and
+  reachable, but it is a platform affordance, not provider-authored API design.
+server:
+  name: Site Visitor Assistant for site "Agragene"
+  version: 1.0.0
+  transport: http
+  url: https://www.agragene.com/_api/mcp
+  protocol_version: '2025-06-18'
+  auth: none
+  capabilities:
+    tools:
+      listChanged: true
+    logging: {}
+deployment:
+  mode: remote
+  endpoint: https://www.agragene.com/_api/mcp
+  auth: none
+  verified: probed
+  checked: '2026-09-12'
+  probe:
+    initialize:
+      http_status: 200
+      server_name: Site Visitor Assistant for site "Agragene"
+      protocol_version: '2025-06-18'
+    tools_list:
+      http_status: 200
+      content_type: application/json; charset=utf-8
+      tool_count: 9
+      raw: mcp/agragene-mcp-tools.json
+tool_count: 9
+tools:
+- name: GetBusinessDetails
+  description: Retrieves business and site details such as timezone, email, phone, and address.
+  parameters: []
+- name: SearchInSite
+  description: Searches the site for information.
+  parameters:
+  - searchTerm
+- name: SearchSiteApiDocs
+  description: >-
+    Retrieves the API documentation for the Wix business solutions installed on this site.
+    Probed 2026-09-12 with searchTerm "installed business solutions products bookings stores":
+    returned "No API documentation found for this search term." — no Wix business solution
+    (Stores, Bookings, Events, Pricing Plans) is installed, so the site exposes no
+    transactional data surface.
+  parameters:
+  - searchTerm
+- name: GenerateVisitorToken
+  description: Creates a new visitor session and obtains a visitor access token for the site.
+  parameters: []
+- name: CallWixSiteAPI
+  description: Calls Wix API methods on the site on a visitor's behalf.
+  parameters:
+  - visitorToken
+  - url
+  - method
+  - body
+- name: ExecuteWixAPI
+  description: Executes Wix API code; declares a hasMutations flag.
+  parameters:
+  - code
+  - reason
+  - hasMutations
+  - sourceDocUrls
+  - visitorToken
+- name: ReadFullDocsArticle
+  description: Fetches a complete article from the Wix developer documentation portal.
+  parameters:
+  - articleUrl
+- name: ReadFullDocsMethodSchema
+  description: Fetches the full schema for a Wix API method.
+  parameters:
+  - articleUrl
+  - reason
+- name: BrowseWixRESTDocsMenu
+  description: Browses the Wix REST documentation menu.
+  parameters:
+  - menuUrl
+  - reason
+notes:
+- >-
+  Several tool descriptions returned by this endpoint embed <agent-mandatory-instructions>
+  blocks addressed to the calling agent (Wix platform boilerplate instructing an agent how to
+  manage a Wix site). They are recorded here as fetched data and were not executed or followed.
+- >-
+  No OpenAPI, GraphQL, AsyncAPI, gRPC or WSDL contract was found on any Agragene host. The
+  MCP tool inputSchemas in mcp/agragene-mcp-tools.json are the only machine-readable
+  interface definitions the company serves.

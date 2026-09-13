@@ -1,0 +1,59 @@
+generated: '2026-09-12'
+method: derived
+source: mcp/agragene-mcp-tools.json, https://www.agragene.com/llms.txt
+description: >-
+  Cross-cutting runtime semantics for the one callable surface Agragene serves — the
+  anonymous Wix site MCP endpoint. There is no REST/GraphQL contract, so most conventions
+  below are properties of the JSON-RPC transport rather than of an API Agragene designed.
+transport:
+  protocol: JSON-RPC 2.0 over HTTP POST
+  endpoint: https://www.agragene.com/_api/mcp
+  content_type: application/json; charset=utf-8
+  accept: application/json, text/event-stream
+auth_style: anonymous; optional per-session visitor token for CallWixSiteAPI/ExecuteWixAPI
+versioning:
+  style: MCP protocolVersion negotiated at initialize
+  current: '2025-06-18'
+  note: No product API version exists; the company ships no versioned contract.
+pagination:
+  style: none
+  note: No paginated collection surface is exposed.
+error_envelope:
+  style: JSON-RPC 2.0 error object
+  note: Not RFC 9457; no problem+json surface exists.
+rate_limit_signaling:
+  headers: []
+  note: No RateLimit-*/X-RateLimit-*/Retry-After headers observed on the probed responses; see rate-limits/.
+request_id_tracing:
+  supported: false
+  note: JSON-RPC id echoes the caller's own id; no provider-issued correlation id.
+idempotency:
+  coverage: none
+  mechanism: null
+  note: >-
+    No Idempotency-Key header, no replay-protection mechanism, and no documented retry
+    semantics. The site exposes no write surface to an anonymous visitor — SearchSiteApiDocs
+    probed 2026-09-12 returned "No API documentation found for this search term.", meaning
+    no Wix business solution (Stores, Bookings, Events, Pricing Plans) is installed — so
+    there is currently nothing an agent can double-fire. Recorded as none rather than na
+    because ExecuteWixAPI does carry a hasMutations flag, i.e. the mechanism could matter
+    if a solution were later installed.
+dry_run_mode:
+  supported: false
+  note: ExecuteWixAPI's hasMutations is a caller-declared flag, not a server-enforced rehearsal mode.
+reversibility:
+  grade: na
+  note: >-
+    No write surface is reachable. The publicly callable tools are read-only
+    (GetBusinessDetails, SearchInSite, SearchSiteApiDocs, ReadFullDocsArticle,
+    ReadFullDocsMethodSchema, BrowseWixRESTDocsMenu) plus a session-token minter; the two
+    generic call tools have no installed Wix business solution behind them. With no action
+    an agent can take, there is no action to take back. No reversal window is asserted
+    because the provider documents none.
+  surfaces: []
+cross_links:
+  authentication: authentication/agragene-authentication.yml
+  rate_limits: rate-limits/agragene-rate-limits.yml
+  mcp: mcp/agragene-mcp.yml
+  conformance: conformance/agragene-conformance.yml
+checked: '2026-09-12'

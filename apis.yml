@@ -1,23 +1,101 @@
 aid: agragene
 name: Agragene
-description: 'Agragene is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Agragene is an agricultural biotechnology company using CRISPR-based genome engineering
+  to build Precision-Guided Sterile Insect Technology (pgSIT), a modern evolution of the
+  sterile insect technique that breeds insect lines producing only sterile males. Released
+  into a field, those males mate with wild female crop pests and produce no viable
+  offspring, giving growers season-long local pest suppression without chemical pesticides
+  or irradiation. Founded in San Diego in 2017 and now headquartered in St. Louis,
+  Missouri, the company's first product, KNOCKOUT-SWD, targets Spotted Wing Drosophila —
+  a pest behind more than $500M in annual US berry losses — with a limited launch stated
+  for 2027. Agragene has no developer program and publishes no API product; its only
+  machine-readable surface is an anonymous Wix site MCP endpoint plus a company-authored
+  llms.txt.
+image: https://static.wixstatic.com/media/252b8c_d34caf2c23cc4a398147d692f5ee7fc2~mv2.png/v1/fit/w_2500,h_1330,al_c/252b8c_d34caf2c23cc4a398147d692f5ee7fc2~mv2.png
 url: https://raw.githubusercontent.com/api-evangelist/agragene/refs/heads/main/apis.yml
-x-type: company
-x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-type:
+  name: company
+x-source:
+  name: harvest
+  value: secondary-market
 specificationVersion: '0.20'
 created: '2026-09-12'
 modified: '2026-09-12'
+position: Producing
 tags:
+- Agriculture
+- Agtech
+- Biotechnology
+- Gene Editing
+- Pest Control
+- Sustainability
+- Food and Beverage
+- Life Sciences
 - Company
-apis: []
+apis:
+- aid: agragene:site-mcp
+  name: Agragene Site MCP
+  description: >-
+    An anonymous remote Model Context Protocol endpoint served on Agragene's own host and
+    advertised in the company's llms.txt. Nine tools let an agent read business details,
+    search site content, mint a visitor session token, and browse Wix API documentation.
+    The server is the stock Wix Site MCP implementation — platform-authored, enabled by
+    Agragene — and is the only callable API surface the company publishes.
+  humanURL: https://www.agragene.com/llms.txt
+  image: https://static.wixstatic.com/media/252b8c_d34caf2c23cc4a398147d692f5ee7fc2~mv2.png/v1/fit/w_2500,h_1330,al_c/252b8c_d34caf2c23cc4a398147d692f5ee7fc2~mv2.png
+  baseURL: https://www.agragene.com/_api/mcp
+  tags:
+  - MCP
+  - Agent
+  - Website
+  properties:
+  - type: MCPServer
+    url: mcp/agragene-mcp.yml
+    name: Agragene Site MCP manifest
+  - type: Authentication
+    url: authentication/agragene-authentication.yml
+  - type: RateLimits
+    url: rate-limits/agragene-rate-limits.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/agragene-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.agragene.com/
+- type: About
+  url: https://www.agragene.com/about
+- type: Blog
+  url: https://www.agragene.com/news
+- type: BlogRSS
+  url: https://www.agragene.com/blog-feed.xml
+- type: FAQ
+  url: https://www.agragene.com/faq
+- type: Support
+  url: mailto:info@agragene.com
+- type: Careers
+  url: https://www.agragene.com/careers
+- type: LLMsTxt
+  url: llms/agragene-llms.txt
+- type: MCPServer
+  url: mcp/agragene-mcp.yml
+  name: Agragene Site MCP manifest
+- type: Authentication
+  url: authentication/agragene-authentication.yml
+- type: Conventions
+  url: conventions/agragene-conventions.yml
+- type: Conformance
+  url: conformance/agragene-conformance.yml
+- type: Plans
+  url: plans/agragene-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/agragene-rate-limits.yml
+x-enrichment:
+  date: '2026-09-12'
+  status: enriched
+  artifacts_added: 10
+  pass: local-v3
