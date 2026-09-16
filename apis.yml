@@ -25,6 +25,16 @@ modified: '2026-09-12'
 position: Producing
 tags:
 - Agriculture
+- AgTech
+- Biotechnology
+- Gene Editing
+- Pest Control
+- Sustainability
+- Food and Beverage
+- Life Sciences
+- Company
+tags_raw:
+- Agriculture
 - Agtech
 - Biotechnology
 - Gene Editing
@@ -46,6 +56,10 @@ apis:
   image: https://static.wixstatic.com/media/252b8c_d34caf2c23cc4a398147d692f5ee7fc2~mv2.png/v1/fit/w_2500,h_1330,al_c/252b8c_d34caf2c23cc4a398147d692f5ee7fc2~mv2.png
   baseURL: https://www.agragene.com/_api/mcp
   tags:
+  - MCP
+  - Agents
+  - Website
+  tags_raw:
   - MCP
   - Agent
   - Website
