@@ -64,15 +64,105 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Agragene is an agricultural biotechnology company using CRISPR-based genome engineering to build
-Precision-Guided Sterile Insect Technology (pgSIT) — breeding insect lines that produce only sterile
-males, which are released to mate with wild female crop pests and produce no viable offspring. Founded
-in San Diego in 2017 and headquartered in St. Louis, Missouri. Its first product, KNOCKOUT-SWD, targets
-Spotted Wing Drosophila, with a limited launch stated for 2027.
+Agragene is an agricultural biotechnology company using CRISPR-based genome engineering to build Precision-Guided Sterile Insect Technology (pgSIT), a modern evolution of the sterile insect technique that breeds insect lines producing only sterile males. Released into a field, those males mate with wild female crop pests and produce no viable offspring, giving growers season-long local pest suppression without chemical pesticides or irradiation. Founded in San Diego in 2017 and now headquartered in St. Louis, Missouri, the company's first product, KNOCKOUT-SWD, targets Spotted Wing Drosophila — a pest behind more than $500M in annual US berry losses — with a limited launch stated for 2027. Agragene has no developer program and publishes no API product; its only machine-readable surface is an anonymous Wix site MCP endpoint plus a company-authored llms.txt.
 
-Agragene has no developer program and publishes no API product. Its only machine-readable surfaces are a
-company-authored `llms.txt` and an anonymous Wix site MCP endpoint served on its own host.
+**Areas:** Agriculture · AgTech · Biotechnology · Gene Editing · Pest Control · Sustainability · Food and Beverage · Life Sciences · Company
 
-- https://www.agragene.com/
-- https://www.agragene.com/llms.txt
-- https://www.agragene.com/_api/mcp
+## Agragene on APIs.io
+
+Everything profiled for Agragene is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/agragene/](https://apis.io/providers/agragene/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Agragene Site MCP](https://apis.io/apis/agragene/site-mcp/) — An anonymous remote Model Context Protocol endpoint served on Agragene's own host and advertised in the company's llms.txt. Nine tools let an agent read…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [Site Visitor Assistant for site "Agragene](https://apis.io/servers/agragene/site-visitor-assistant-for-site-agragene/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Agragene Authentication](https://apis.io/security/agragene/agragene-authentication/)
+- [Agragene Domain Security](https://apis.io/security/agragene/agragene-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Agragene Plans Pricing](https://apis.io/plans/agragene/agragene-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Agragene Rate Limits](https://apis.io/rate-limits/agragene/agragene-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.agragene.com/)
+- [Blog](https://www.agragene.com/news)
+
+## API Evangelist rating
+
+**Kin Score 13.7** — emerging · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 0.0 |
+
+**Agent readiness 7.2** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | platform (partial credit) |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 13.3** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/agragene/](https://apis.io/providers/agragene/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Agragene: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/agragene/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
